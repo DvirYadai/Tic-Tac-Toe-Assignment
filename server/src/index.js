@@ -12,6 +12,7 @@ let playAgainArr = [];
 
 // fired when player connect
 io.on("connection", (socket) => {
+  console.log(socket.id);
   sockets.push(socket.id);
 
   // prevent from third player (and so on) to enter the game.
@@ -51,7 +52,6 @@ io.on("connection", (socket) => {
     playAgainArr.push(socket.id);
     if (playAgainArr.length === 2) {
       game.resetGame();
-      console.log(game);
       io.emit("new game", game);
       playAgainArr = [];
       return;

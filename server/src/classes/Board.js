@@ -54,7 +54,7 @@ class Board {
     } else if (
       this.boardArr[0][2] !== null &&
       this.boardArr[0][2] === this.boardArr[1][1] &&
-      this.boardArr[0][2] === this.boardArr[0][0]
+      this.boardArr[0][2] === this.boardArr[2][0]
     ) {
       return "win";
     }
